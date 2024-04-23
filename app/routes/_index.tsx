@@ -1,26 +1,39 @@
-import type { MetaFunction } from "@remix-run/node";
+import type {MetaFunction} from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
+    return [
+        {title: "New Remix App"},
+        {name: "description", content: "Welcome to Remix!"},
+    ];
 };
 
 export default function Index() {
-  return (
-      <div class="container mx-auto">
-        <svg className="left-1 top-1 h-5 w-5 text-blue-600" viewBox="0 0 20 20" fill="currentColor"
-             aria-hidden="true">
-          <path fill-rule="evenodd"
-                d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z"
-                clip-rule="evenodd"/>
-        </svg>
-
-  <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-      </div>
-)
-  ;
+    return (
+        <div class="container mx-auto">
+            <div class="grid size-40 justify-items-center items-center">
+                <div>
+                    <button type="button"
+                            className="object-center py-3 px-4 flex justify-center items-center size-[46px] text-sm font-semibold rounded-full border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="columns-3">
+                    <div>
+                        <span className="size-12 block bg-gray-200 rounded-full dark:bg-neutral-700"></span>
+                    </div>
+                    <div>
+                        <span className="size-12 block bg-gray-200 rounded-full dark:bg-neutral-700"></span>
+                    </div>
+                    <div>
+                        <span className="size-12 block bg-gray-200 rounded-full dark:bg-neutral-700"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+        ;
 }
