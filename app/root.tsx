@@ -7,7 +7,7 @@ import {
     useLocation,
 } from "@remix-run/react";
 import {LinksFunction} from "@remix-run/node";
-import styles from "./tailwind.css";
+import styles from "./tailwind.css?url";
 import { type IStaticMethods } from "preline/preline";
 import {useEffect} from "react";
 
@@ -18,7 +18,7 @@ declare global {
 }
 
 if (typeof window !== "undefined") {
-    require("preline/preline");
+    import("preline/preline");
 }
 
 export const links: LinksFunction = () => [
