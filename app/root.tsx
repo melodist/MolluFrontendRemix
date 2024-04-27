@@ -1,29 +1,27 @@
 import {
-    Links,
-    Meta,
-    Outlet,
-    Scripts,
-    ScrollRestoration,
-    useLocation,
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
-import {LinksFunction} from "@remix-run/node";
+import { LinksFunction } from "@remix-run/node";
 import styles from "./tailwind.css?url";
 import { type IStaticMethods } from "preline/preline";
-import {useEffect} from "react";
+import { useEffect } from "react";
 
 declare global {
-    interface Window {
-        HSStaticMethods: IStaticMethods;
-    }
+  interface Window {
+    HSStaticMethods: IStaticMethods;
+  }
 }
 
 if (typeof window !== "undefined") {
-    import("preline/preline");
+  import("preline/preline");
 }
 
-export const links: LinksFunction = () => [
-    { rel: "stylesheet", href: styles },
-];
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -44,11 +42,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-    const location = useLocation();
+  const location = useLocation();
 
-    useEffect(() => {
-        window.HSStaticMethods.autoInit();
-    }, [location.pathname]);
+  useEffect(() => {
+    if (document.readyState === "complete") {
+      window.HSStaticMethods.autoInit();
+    }
+  }, [location.pathname]);
 
-    return <Outlet />;
+  return <Outlet />;
 }
