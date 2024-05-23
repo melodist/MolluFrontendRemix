@@ -8,6 +8,11 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const play = () => {
+    const audio = new Audio("sounds/example.ogg");
+    audio.play();
+  };
+
   return (
     <div className="container mx-auto">
       <div className="flex justify-center items-center">
@@ -16,6 +21,7 @@ export default function Index() {
             <button
               type="button"
               className="object-center px-1 py-1 flex justify-center items-center size-12 text-sm font-semibold rounded-full border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+              onClick={play}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
