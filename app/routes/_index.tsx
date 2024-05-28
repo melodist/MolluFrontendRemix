@@ -7,12 +7,12 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Index() {
-  const play = () => {
-    const audio = new Audio("sounds/example.ogg");
-    audio.play();
-  };
+const play = () => {
+  const audio = new Audio("sounds/example.ogg");
+  audio.play();
+};
 
+export default function Index() {
   return (
     <div className="container mx-auto">
       <div className="flex justify-center items-center">
@@ -40,13 +40,31 @@ export default function Index() {
           </div>
           <div className="columns-3">
             <div>
-              <span className="size-12 block bg-gray-200 rounded-full dark:bg-neutral-700"></span>
+              <button
+                type="button"
+                className="size-20 text-sm font-semibold rounded-full border border-transparent text-white bg-cover hover:ring hover:ring-blue-400 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                style={{
+                  backgroundImage: `url("images/portrait/example_1.png")`,
+                }}
+              />
             </div>
             <div>
-              <span className="size-12 block bg-gray-200 rounded-full dark:bg-neutral-700"></span>
+              <button
+                type="button"
+                className="size-20 text-sm font-semibold rounded-full border border-transparent text-white bg-cover hover:ring hover:ring-blue-400 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                style={{
+                  backgroundImage: `url("images/portrait/example_2.png")`,
+                }}
+              />
             </div>
             <div>
-              <span className="size-12 block bg-gray-200 rounded-full dark:bg-neutral-700"></span>
+              <button
+                type="button"
+                className="size-20 text-sm font-semibold rounded-full border border-transparent text-white bg-cover hover:ring hover:ring-blue-400 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                style={{
+                  backgroundImage: `url("images/portrait/example_3.png")`,
+                }}
+              />
             </div>
           </div>
         </div>
