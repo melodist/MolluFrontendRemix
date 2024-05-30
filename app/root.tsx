@@ -10,6 +10,7 @@ import { LinksFunction } from "@remix-run/node";
 import styles from "./tailwind.css?url";
 import { type IStaticMethods } from "preline/preline";
 import { useEffect } from "react";
+import path from "path";
 
 declare global {
   interface Window {
@@ -48,7 +49,7 @@ export default function App() {
     if (document.readyState === "complete") {
       window.HSStaticMethods.autoInit();
     }
-  }, [location.pathname]);
+  }, [path]);
 
   return <Outlet />;
 }
