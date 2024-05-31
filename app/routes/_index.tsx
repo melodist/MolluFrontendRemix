@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import Success from "@app/routes/components/success";
 
 export const meta: MetaFunction = () => {
   return [
@@ -43,7 +44,7 @@ export default function Index() {
               <div>
                 <button
                   type="button"
-                  className="size-20 text-sm font-semibold rounded-full border border-transparent text-white bg-cover hover:ring hover:ring-blue-400 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                  className="size-40 text-sm font-semibold rounded-full border border-transparent text-white bg-cover hover:ring hover:ring-blue-400 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                   style={{
                     backgroundImage: `url("images/portrait/example_1.png")`,
                   }}
@@ -52,16 +53,17 @@ export default function Index() {
               <div>
                 <button
                   type="button"
-                  className="size-20 text-sm font-semibold rounded-full border border-transparent text-white bg-cover hover:ring hover:ring-blue-400 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                  className="size-40 text-sm font-semibold rounded-full border border-transparent text-white bg-cover hover:ring hover:ring-blue-400 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                   style={{
                     backgroundImage: `url("images/portrait/example_2.png")`,
                   }}
+                  data-hs-overlay="#hs-basic-modal"
                 />
               </div>
               <div>
                 <button
                   type="button"
-                  className="size-20 text-sm font-semibold rounded-full border border-transparent text-white bg-cover hover:ring hover:ring-blue-400 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                  className="size-40 text-sm font-semibold rounded-full border border-transparent text-white bg-cover hover:ring hover:ring-blue-400 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
                   style={{
                     backgroundImage: `url("images/portrait/example_3.png")`,
                   }}
@@ -71,6 +73,7 @@ export default function Index() {
           </div>
         </div>
       </div>
+      <Success />
     </div>
   );
 }

@@ -4,7 +4,6 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useLocation,
 } from "@remix-run/react";
 import { LinksFunction } from "@remix-run/node";
 import styles from "./tailwind.css?url";
@@ -43,8 +42,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  const location = useLocation();
-
   useEffect(() => {
     if (document.readyState === "complete") {
       window.HSStaticMethods.autoInit();
