@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import Success from "@app/routes/components/success";
+import Success from "~/components/success";
 
 export const meta: MetaFunction = () => {
   return [

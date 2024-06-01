@@ -6,7 +6,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import { LinksFunction } from "@remix-run/node";
-import styles from "./tailwind.css?url";
+import styles from "~/tailwind.css?url";
 import { type IStaticMethods } from "preline/preline";
 import { useEffect } from "react";
 import path from "path";
