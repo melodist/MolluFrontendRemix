@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import Success from "~/components/success";
+import { useState } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -14,6 +15,8 @@ const play = () => {
 };
 
 export default function Index() {
+  const [showResults, setShowResults] = useState<boolean>(false);
+
   return (
     <div className="container mx-auto">
       <div className="flex justify-center items-center">
@@ -57,7 +60,6 @@ export default function Index() {
                   style={{
                     backgroundImage: `url("images/portrait/example_2.png")`,
                   }}
-                  data-hs-overlay="#hs-basic-modal"
                 />
               </div>
               <div>
