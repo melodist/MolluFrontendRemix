@@ -16,12 +16,17 @@ const play = () => {
 
 export default function Index() {
   const [showResults, setShowResults] = useState<boolean>(false);
+  const successPopup = () => {
+    setShowResults(true);
+    setTimeout(() => setShowResults(false), 500);
+  };
 
   return (
     <div className="container mx-auto">
       <div className="flex justify-center items-center">
         <div className="box-border content-center h-screen">
           <div className="grid gap-2 p-4 border-2 border-b-cyan-500 justify-items-center content-center">
+            {showResults ? <Success /> : null}
             <div>
               <button
                 type="button"
@@ -60,6 +65,9 @@ export default function Index() {
                   style={{
                     backgroundImage: `url("images/portrait/example_2.png")`,
                   }}
+                  onClick={() => {
+                    successPopup();
+                  }}
                 />
               </div>
               <div>
@@ -75,7 +83,6 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <Success />
     </div>
   );
 }
