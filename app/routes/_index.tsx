@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import Success from "~/components/success";
+import Correct from "~/components/correct";
 import { useState } from "react";
 
 export const meta: MetaFunction = () => {
@@ -24,9 +24,8 @@ export default function Index() {
   return (
     <div className="container mx-auto">
       <div className="flex justify-center items-center">
-        <div className="box-border content-center h-screen">
+        <div className="box-border content-center h-screen relative">
           <div className="grid gap-2 p-4 border-2 border-b-cyan-500 justify-items-center content-center">
-            {showResults ? <Success /> : null}
             <div>
               <button
                 type="button"
@@ -82,6 +81,7 @@ export default function Index() {
             </div>
           </div>
         </div>
+        {showResults ? <Correct /> : null}
       </div>
     </div>
   );
